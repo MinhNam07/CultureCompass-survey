@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback survey — CultureCompass</title>
+  <meta name="description" content="A five-minute anonymous survey about the CultureCompass prototype.">
+  <meta name="theme-color" content="#0B1220">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Source+Serif+4:wght@600&display=swap">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B1220'/%3E%3Cpath d='M16 3l3 13-3 13-3-13z' fill='%235FD8E8'/%3E%3Cpath d='M3 16l13-3 13 3-13 3z' fill='%23E6EEF6'/%3E%3C/svg%3E">
+  <style>
+    /* VOICE  calm, friendly, honest about being a prototype
+       IDEA   a traveller's entry card: one calm column of stamped sections
+       PICTURE the form itself, nothing drawn beside it
+       COLOUR "Đêm Hà Nội": night navy ground, cyan for every action, gold only for the prototype note
+       TYPE   Source Serif 4 titles, Be Vietnam Pro body (self-hosted, as on the site) */
+    :root{
+      --night:#0B1220;--night-2:#121B2E;--night-3:#16263A;--line:#1E3A4C;--line-2:#2E5268;
+      --text:#E6EEF6;--muted:#A9B8C8;--cyan:#5FD8E8;--cyan-ink:#062A2A;--gold:#F2C14E;--red:#FF8A73;
+      color-scheme:dark;
+    }
+    *{box-sizing:border-box;min-width:0}
+    html{background:var(--night)}
+    body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#14304a 0%,var(--night) 60%) no-repeat,var(--night);color:var(--text);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:clip}
+    a{color:var(--cyan)}
+    .wrap{max-width:720px;margin:0 auto;padding:clamp(24px,5vw,56px) max(5vw,16px) 64px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:32px;font-size:14px}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700}
+    .brand img{width:28px;height:28px;image-rendering:pixelated}
+    h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+    h1{font-size:clamp(32px,6vw,46px);margin-bottom:16px}
+    h2{font-size:24px;margin-bottom:4px}
+    .lead{font-size:17px;color:#C6D2DE;margin:0 0 16px;max-width:62ch}
+    .proto{border:1px solid rgb(242 193 78 / .45);background:rgb(242 193 78 / .08);border-radius:4px;padding:14px 16px;margin:20px 0 8px;font-size:15px}
+    .proto strong{color:var(--gold)}
+    .meta{color:var(--muted);font-size:14px;margin:8px 0 0}
+    fieldset{border:0;margin:0;padding:0}
+    .sec{background:var(--night-2);border:1px solid var(--line);border-radius:6px;padding:clamp(18px,4vw,28px);margin-top:20px}
+    .sec>p.hint{color:var(--muted);font-size:14px;margin:0 0 8px}
+    .q{margin-top:22px}
+    .q:first-of-type{margin-top:14px}
+    .q>legend,.q>.ql{display:block;font-weight:500;margin-bottom:10px;padding:0}
+    .req{color:var(--cyan);margin-left:4px}
+    .opt{color:var(--muted);font-weight:400;font-size:14px;margin-left:6px}
+    .choices{display:flex;flex-wrap:wrap;gap:8px}
+    .ch{position:relative}
+    .ch input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+    .ch span{display:flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid var(--line-2);border-radius:4px;background:var(--night-3);cursor:pointer;transition:background .15s,border-color .15s}
+    .ch input:hover+span{border-color:var(--cyan)}
+    .ch input:checked+span{background:var(--cyan);border-color:var(--cyan);color:var(--cyan-ink);font-weight:700}
+    .ch input:focus-visible+span{outline:3px solid var(--cyan);outline-offset:3px}
+    .task{background:var(--night-3);border-left:3px solid var(--cyan);padding:12px 16px;border-radius:0 4px 4px 0;margin:6px 0 4px}
+    .task ol{margin:6px 0 0;padding-left:20px}
+    .task a{font-weight:700}
+    /* rating grid */
+    .grid{width:100%;border-collapse:collapse;margin-top:6px}
+    .grid th,.grid td{padding:8px 4px;border-bottom:1px solid var(--line)}
+    .grid thead th{font-size:13px;font-weight:500;color:var(--muted);text-align:center;vertical-align:bottom;line-height:1.3}
+    .grid tbody th{text-align:left;font-weight:400;padding-right:12px}
+    .grid td{text-align:center;width:58px}
+    .dot{position:relative;display:inline-block;width:44px;height:44px}
+    .dot input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+    .dot span{position:absolute;inset:10px;border:2px solid var(--line-2);border-radius:50%;background:var(--night-3);transition:.15s}
+    .dot input:hover+span{border-color:var(--cyan)}
+    .dot input:checked+span{background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 0 4px rgb(95 216 232 / .18)}
+    .dot input:focus-visible+span{outline:3px solid var(--cyan);outline-offset:3px}
+    .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    .dot b{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    .grid tr.missing th{color:var(--red)}
+    .scale-key{display:none}
+    .nps{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:6px}
+    .nps .ch span{justify-content:center;padding:8px 0}
+    .nps-ends{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:6px}
+    .sub{margin:14px 0 0 0;padding-left:16px;border-left:2px solid var(--line-2)}
+    input[type=text],textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--night-3);border:1px solid var(--line-2);border-radius:4px;padding:12px 14px}
+    textarea{min-height:120px;resize:vertical}
+    input[type=text]:focus,textarea:focus{outline:3px solid var(--cyan);outline-offset:2px;border-color:var(--cyan)}
+    .err{color:var(--red);font-size:14px;margin:8px 0 0;display:none}
+    .q.invalid .err{display:block}
+    .q.invalid>legend,.q.invalid>.ql{color:var(--red)}
+    .actions{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+    button{font:inherit;font-weight:700;font-size:17px;min-height:52px;padding:12px 28px;border:0;border-radius:4px;background:var(--cyan);color:var(--cyan-ink);cursor:pointer}
+    button:hover{filter:brightness(1.08)}
+    button:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+    button[disabled]{opacity:.6;cursor:progress}
+    #status{font-size:15px}
+    #status.bad{color:var(--red)}
+    .done{text-align:center;padding:48px 8px}
+    .done .stamp{display:inline-grid;place-items:center;width:120px;height:120px;border:3px dashed var(--cyan);border-radius:50%;color:var(--cyan);font-family:"Source Serif 4",serif;font-size:20px;line-height:1.1;transform:rotate(-8deg);margin-bottom:24px}
+    .done p{color:#C6D2DE;max-width:46ch;margin:12px auto}
+    [hidden]{display:none!important}
+    @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+    @media (max-width:600px){
+      .grid thead{display:none}
+      .scale-key{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin:4px 0 2px}
+      .grid,.grid tbody,.grid tr,.grid th,.grid td{display:block;width:auto}
+      .grid tr{padding:12px 0;border-bottom:1px solid var(--line)}
+      .grid tbody th{border:0;padding:0 0 6px}
+      .grid td{display:inline-block;border:0;padding:0;width:calc(20% - 2px)}
+      .nps{grid-template-columns:repeat(6,minmax(0,1fr))}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand cc-site" href="#"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#16263A" stroke="#2E5268"/><path d="M16 3l3 13-3 13-3-13z" fill="#5FD8E8"/><path d="M3 16l13-3 13 3-13 3z" fill="#E6EEF6"/></svg>CultureCompass</a>
+    <a class="cc-site" href="#">Open the website</a>
+  </div>
+
+  <main id="survey">
+    <h1>Tell us what you think</h1>
+    <p class="lead"><strong>CultureCompass</strong> is a website for travellers to explore the cultures of different countries through short stories and a small exploration game. It is built to cover many destinations and many cultures.</p>
+    <p class="proto"><strong>This is an early prototype.</strong> Only <strong>Hà Nội, Vietnam</strong> is available for now, so please judge the idea and the experience, not the number of countries.</p>
+    <p class="meta">About 5 minutes · anonymous · part of a student UX project (CSCU9X5). Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+    <form id="f" novalidate>
+      <section class="sec" aria-labelledby="s0">
+        <h2 id="s0">Before you start</h2>
+        <fieldset class="q" data-req="consent">
+          <legend>Consent<span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices"><label class="ch"><input type="checkbox" name="consent" value="Yes"><span>I agree to take part. My answers are anonymous and only used for this assignment.</span></label></div>
+          <p class="err">Please tick to agree before sending.</p>
+        </fieldset>
+      </section>
+
+      <section class="sec" aria-labelledby="s1">
+        <h2 id="s1">About you</h2>
+        <fieldset class="q" data-req="age"><legend>1. Age group<span class="req" aria-hidden="true">*</span></legend><div class="choices" data-opts="age|Under 18|18–24|25–34|35+"></div><p class="err">Please choose one.</p></fieldset>
+        <fieldset class="q" data-req="travel"><legend>2. How often do you travel abroad?<span class="req" aria-hidden="true">*</span></legend><div class="choices" data-opts="travel|Rarely or never|Once a year|Several times a year"></div><p class="err">Please choose one.</p></fieldset>
+        <fieldset class="q" data-req="vietnam"><legend>3. Have you been to Vietnam?<span class="req" aria-hidden="true">*</span></legend><div class="choices" data-opts="vietnam|No|Yes, visited|I live there"></div><p class="err">Please choose one.</p></fieldset>
+      </section>
+
+      <section class="sec" aria-labelledby="s2">
+        <h2 id="s2">Try the website</h2>
+        <div class="task">If you haven't yet, please <a class="cc-site" href="#" target="_blank" rel="noopener">open CultureCompass</a> and try to:
+          <ol><li>start the Hà Nội game,</li><li>complete one moment in the game,</li><li>read one story,</li><li>save something to My collection.</li></ol>
+        </div>
+        <fieldset class="q"><legend>4. Which did you manage to do? <span class="opt">Choose all that apply</span></legend><div class="choices" data-opts="tasks|Start the game|Complete a moment|Read a story|Save something" data-multi></div></fieldset>
+      </section>
+
+      <section class="sec" aria-labelledby="s3">
+        <h2 id="s3">Your experience</h2>
+        <fieldset class="q" data-req="grid" id="q5">
+          <legend>5. How much do you agree?<span class="req" aria-hidden="true">*</span></legend>
+          <p class="scale-key" aria-hidden="true"><span>1 Strongly disagree</span><span>5 Strongly agree</span></p>
+          <table class="grid"><thead><tr><th scope="col"><span class="visually-hidden"></span></th><th scope="col">1<br>Strongly disagree</th><th scope="col">2</th><th scope="col">3<br>Neutral</th><th scope="col">4</th><th scope="col">5<br>Strongly agree</th></tr></thead><tbody id="gridBody"></tbody></table>
+          <p class="err">Please answer every row.</p>
+        </fieldset>
+        <fieldset class="q" data-req="more_countries"><legend>6. If more countries were added, would you use CultureCompass before a trip?<span class="req" aria-hidden="true">*</span></legend><div class="choices" data-opts="more_countries|Yes|Maybe|No"></div><p class="err">Please choose one.</p></fieldset>
+      </section>
+
+      <section class="sec" aria-labelledby="s4">
+        <h2 id="s4">Similar websites</h2>
+        <fieldset class="q" data-req="similar_used"><legend>7. Have you used another website or app for learning about a country's culture?<span class="req" aria-hidden="true">*</span></legend><div class="choices" data-opts="similar_used|Yes|No"></div><p class="err">Please choose one.</p></fieldset>
+        <div class="sub" id="similarMore" hidden>
+          <div class="q"><label class="ql" for="similar_name">7a. Which one? <span class="opt">Optional</span></label><input type="text" id="similar_name" name="similar_name" maxlength="120" autocomplete="off"></div>
+          <fieldset class="q"><legend>7b. Compared with it, CultureCompass is…</legend><div class="choices" data-opts="similar_compare|Much worse|Worse|About the same|Better|Much better"></div></fieldset>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="s5">
+        <h2 id="s5">Overall</h2>
+        <fieldset class="q" data-req="nps"><legend>8. How likely are you to recommend CultureCompass to a friend?<span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices nps" data-opts="nps|0|1|2|3|4|5|6|7|8|9|10"></div>
+          <div class="nps-ends" aria-hidden="true"><span>0 Not at all likely</span><span>10 Extremely likely</span></div>
+          <p class="err">Please choose a number.</p></fieldset>
+        <div class="q"><label class="ql" for="feedback">9. Any feedback: what you liked, what confused you, or one thing you'd change? <span class="opt">Optional</span></label><textarea id="feedback" name="feedback" maxlength="2000"></textarea></div>
+      </section>
+
+      <div class="actions"><button type="submit" id="send">Send my answers</button><span id="status" role="status" aria-live="polite"></span></div>
+    </form>
+  </main>
+
+  <section class="done" id="done" hidden tabindex="-1" aria-labelledby="doneTitle">
+    <div class="stamp" aria-hidden="true">Thank<br>you!</div>
+    <h1 id="doneTitle">Your answers are in</h1>
+    <p>Thanks for helping shape CultureCompass. Your feedback goes straight into the next version.</p>
+    <p><a class="cc-site" href="#">Back to CultureCompass</a></p>
+  </section>
+</div>
+
+<script>
+{
+  // Paste the Web app URL from Google Apps Script here (see docs/survey/README.md).
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwwdb1qpRa1f6c4wbo9tKGaLMZsHNkBXtgK_6XEWBiJlO2V2zgYJ9-L7LTJlLlvhuc/exec';
+  // Address of the deployed CultureCompass website (used by every "Open the website" link).
+  const SITE_URL = 'https://YOUR-SITE.vercel.app/';
+  const VERSION = 'survey-v1';
+  document.querySelectorAll('a.cc-site').forEach(a => { a.href = SITE_URL; });
+
+  const ROWS = [
+    ['r_easy', 'The website is easy to use.'],
+    ['r_game_start', 'It was easy to find and start the game.'],
+    ['r_game_understand', 'The game helped me understand everyday life in Hà Nội.'],
+    ['r_learned', 'I learned something I could use on a real trip.'],
+    ['r_trust', 'I trust the information.'],
+    ['r_look', 'The look and feel fits the topic.'],
+    ['r_enjoy', 'It was enjoyable to use.']
+  ];
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  document.querySelectorAll('[data-opts]').forEach(box => {
+    const [name, ...opts] = box.dataset.opts.split('|');
+    const type = box.hasAttribute('data-multi') ? 'checkbox' : 'radio';
+    box.innerHTML = opts.map(o => `<label class="ch"><input type="${type}" name="${name}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('');
+  });
+
+  document.getElementById('gridBody').innerHTML = ROWS.map(([key, text]) =>
+    `<tr data-row="${key}"><th scope="row" id="${key}-l">${esc(text)}</th>` +
+    [1,2,3,4,5].map(n => `<td><label class="dot"><input type="radio" name="${key}" value="${n}" aria-labelledby="${key}-l ${key}-${n}"><span></span><b id="${key}-${n}">${n} of 5</b></label></td>`).join('') +
+    '</tr>').join('');
+
+  const form = document.getElementById('f');
+  const status = document.getElementById('status');
+  const send = document.getElementById('send');
+  const more = document.getElementById('similarMore');
+
+  const val = name => (form.querySelector(`input[name="${name}"]:checked`) || {}).value || '';
+  const vals = name => [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
+
+  form.addEventListener('change', e => {
+    if (e.target.name === 'similar_used') more.hidden = e.target.value !== 'Yes';
+    const q = e.target.closest('.q');
+    if (q && q.classList.contains('invalid')) check(q);
+  });
+
+  function check(q) {
+    const key = q.dataset.req;
+    let ok = true;
+    if (key === 'grid') {
+      q.querySelectorAll('tr[data-row]').forEach(tr => {
+        const miss = !val(tr.dataset.row);
+        tr.classList.toggle('missing', miss && q.classList.contains('tried'));
+        if (miss) ok = false;
+      });
+    } else ok = !!val(key);
+    q.classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    let first = null;
+    form.querySelectorAll('.q[data-req]').forEach(q => {
+      q.classList.add('tried');
+      if (!check(q) && !first) first = q;
+    });
+    if (first) {
+      status.className = 'bad';
+      status.textContent = 'Some answers are missing. They are marked in red.';
+      first.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+      const f = first.querySelector('input'); if (f) f.focus({ preventScroll: true });
+      return;
+    }
+    if (!SHEET_URL) {
+      status.className = 'bad';
+      status.textContent = 'This survey is not connected to its results sheet yet. Please tell the project owner.';
+      return;
+    }
+    const data = {
+      version: VERSION,
+      consent: val('consent'), age: val('age'), travel: val('travel'), vietnam: val('vietnam'),
+      tasks: vals('tasks').join('; '),
+      more_countries: val('more_countries'),
+      similar_used: val('similar_used'),
+      similar_name: val('similar_used') === 'Yes' ? form.similar_name.value.trim() : '',
+      similar_compare: val('similar_used') === 'Yes' ? val('similar_compare') : '',
+      nps: val('nps'),
+      feedback: form.feedback.value.trim()
+    };
+    ROWS.forEach(([k]) => { data[k] = val(k); });
+
+    send.disabled = true;
+    status.className = '';
+    status.textContent = 'Sending…';
+    try {
+      // text/plain keeps this a simple request, so Apps Script accepts it without a CORS preflight.
+      await fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+      document.getElementById('survey').hidden = true;
+      const done = document.getElementById('done');
+      done.hidden = false;
+      done.focus();
+      window.scrollTo(0, 0);
+    } catch (err) {
+      send.disabled = false;
+      status.className = 'bad';
+      status.textContent = 'Could not send. Please check your connection and try again.';
+    }
+  });
+}
+</script>
+</body>
+</html>
