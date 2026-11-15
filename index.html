@@ -114,8 +114,8 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <a class="brand cc-site" href="#"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#16263A" stroke="#2E5268"/><path d="M16 3l3 13-3 13-3-13z" fill="#5FD8E8"/><path d="M3 16l13-3 13 3-13 3z" fill="#E6EEF6"/></svg>CultureCompass</a>
-    <a class="cc-site" href="#">Open the website</a>
+    <a class="brand cc-site" href="https://culturecompass-web.vercel.app/" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#16263A" stroke="#2E5268"/><path d="M16 3l3 13-3 13-3-13z" fill="#5FD8E8"/><path d="M3 16l13-3 13 3-13 3z" fill="#E6EEF6"/></svg>CultureCompass</a>
+    <a class="cc-site" href="https://culturecompass-web.vercel.app/" target="_blank" rel="noopener">Open the website</a>
   </div>
 
   <main id="survey">
@@ -143,8 +143,8 @@
 
       <section class="sec" aria-labelledby="s2">
         <h2 id="s2">Try the website</h2>
-        <div class="task">If you haven't yet, please <a class="cc-site" href="#" target="_blank" rel="noopener">open CultureCompass</a> and try to:
-          <ol><li>start the Hà Nội game,</li><li>complete one moment in the game,</li><li>read one story,</li><li>save something to My collection.</li></ol>
+        <div class="task">If you haven't yet, please <a class="cc-site" href="https://culturecompass-web.vercel.app/" target="_blank" rel="noopener">open CultureCompass</a> and try to:
+          <ol><li>start the Hà Nội game,</li><li>complete one moment in the game,</li><li>read one story,</li><li>save something to your Passport.</li></ol>
         </div>
         <fieldset class="q"><legend>4. Which did you manage to do? <span class="opt">Choose all that apply</span></legend><div class="choices" data-opts="tasks|Start the game|Complete a moment|Read a story|Save something" data-multi></div></fieldset>
       </section>
@@ -186,7 +186,7 @@
     <div class="stamp" aria-hidden="true">Thank<br>you!</div>
     <h1 id="doneTitle">Your answers are in</h1>
     <p>Thanks for helping shape CultureCompass. Your feedback goes straight into the next version.</p>
-    <p><a class="cc-site" href="#">Back to CultureCompass</a></p>
+    <p><a class="cc-site" href="https://culturecompass-web.vercel.app/">Back to CultureCompass</a></p>
   </section>
 </div>
 
@@ -195,7 +195,7 @@
   // Paste the Web app URL from Google Apps Script here (see docs/survey/README.md).
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwwdb1qpRa1f6c4wbo9tKGaLMZsHNkBXtgK_6XEWBiJlO2V2zgYJ9-L7LTJlLlvhuc/exec';
   // Address of the deployed CultureCompass website (used by every "Open the website" link).
-  const SITE_URL = 'https://YOUR-SITE.vercel.app/';
+  const SITE_URL = 'https://culturecompass-web.vercel.app/';
   const VERSION = 'survey-v1';
   document.querySelectorAll('a.cc-site').forEach(a => { a.href = SITE_URL; });
 

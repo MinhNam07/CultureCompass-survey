@@ -7,7 +7,7 @@ Trang khảo sát đứng riêng, tách khỏi repo CultureCompass.
 
 ## Việc còn lại
 
-1. Mở `index.html`, sửa dòng `const SITE_URL = 'https://YOUR-SITE.vercel.app/';` thành domain thật của CultureCompass.
+1. Link tới web: `https://culturecompass-web.vercel.app/` (dòng `const SITE_URL` và các link trong `index.html`). Đổi domain thì sửa cả hai.
 2. Deploy folder này để có link gửi người dùng. Cách nhanh nhất: kéo cả folder vào <https://app.netlify.com/drop>.
    Hoặc dùng Vercel: tạo project mới từ folder này (`npx vercel` trong folder).
 3. Xoá dòng "TEST - delete me" trong sheet trước khi gửi link.
